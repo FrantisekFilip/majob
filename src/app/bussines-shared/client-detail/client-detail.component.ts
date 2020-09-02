@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RisksService } from '../../catalogue/risks.service';
 
 @Component({
   selector: 'app-client-detail',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClientDetailComponent implements OnInit {
 
-  constructor() { }
+  constructor(private risksService: RisksService) { }
 
   ngOnInit(): void {
+    console.log(this.risksService.getMockRisk());
   }
 
 }
