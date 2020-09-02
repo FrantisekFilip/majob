@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { BussinesSharedModule } from './bussines-shared/bussines-shared.module';
 import { CatalogueModule } from './catalogue/catalogue.module';
+import { CacheModule } from './cache/cache.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { CatalogueModule } from './catalogue/catalogue.module';
     AppRoutingModule,
     SharedModule,
     BussinesSharedModule,
-    CatalogueModule
+    CatalogueModule,
+    CacheModule
   ],
   providers: [],
   bootstrap: [AppComponent]
