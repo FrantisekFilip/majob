@@ -1,6 +1,6 @@
 # Docker
 ```
-docker build --tag majob dist
+docker build -f Dockerfile --tag majob dist
 ```
 ```
 docker run --name majob -p 8080:80 majob
