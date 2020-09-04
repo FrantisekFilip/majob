@@ -9,6 +9,7 @@ import { CatalogueModule } from './catalogue/catalogue.module';
 import { CacheModule } from './cache/cache.module';
 import { HttpClientModule } from '@angular/common/http';
 import {ConfigurationService} from "./configuration.service";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {ConfigurationService} from "./configuration.service";
     BussinesSharedModule,
     CatalogueModule,
     CacheModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [
     ConfigurationService,
