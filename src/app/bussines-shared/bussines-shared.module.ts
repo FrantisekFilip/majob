@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ClientDetailComponent } from './client-detail/client-detail.component';
-
-
+import { PersonDetailComponent } from './person-detail/person-detail.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
-  declarations: [ClientDetailComponent],
+  declarations: [ClientDetailComponent, PersonDetailComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule
   ],
   exports: [
     ClientDetailComponent

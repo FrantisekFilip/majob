@@ -8,7 +8,7 @@ import { BussinesSharedModule } from './bussines-shared/bussines-shared.module';
 import { CatalogueModule } from './catalogue/catalogue.module';
 import { CacheModule } from './cache/cache.module';
 import { HttpClientModule } from '@angular/common/http';
-import {ConfigurationService} from "./configuration.service";
+import { ConfigurationService } from "./configuration.service";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({

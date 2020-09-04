@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { NgControl } from '@angular/forms';
 import { rodnecislo } from 'rodnecislo';
 
+
 @Component({
   selector: 'app-input-personal-id',
   templateUrl: './input-personal-id.component.html',
@@ -15,7 +16,8 @@ export class InputPersonalIdComponent implements OnInit, MatFormFieldControl<str
   constructor() { }
   color: string = 'accent';
   personalNumber: any;
-  value: any;
+
+  value: string;
   stateChanges: Observable<void>;
   id: string;
   placeholder: string;
@@ -30,6 +32,7 @@ export class InputPersonalIdComponent implements OnInit, MatFormFieldControl<str
   controlType?: string;
   autofilled?: boolean;
   userAriaDescribedBy?: string;
+
   setDescribedByIds(ids: string[]): void {
     throw new Error("Method not implemented.");
   }
@@ -41,14 +44,14 @@ export class InputPersonalIdComponent implements OnInit, MatFormFieldControl<str
     if((charCode > 31 && (charCode < 48 || charCode > 57)) || event.target.value.length == 11) {
       return false;
     }
+  }
+  onKeyUp(event) {
     if(event.target.value.length == 6) {
       event.target.value = event.target.value + '/';
     }
-    this.value = event.target.value;
-  }
-  onKeyUp(event) {
     this.personalNumber = rodnecislo(event.target.value);
     this.color = this.personalNumber.isValid() ? '' : 'accent';
+    this.value = event.target.value;
   }
 
   ngOnInit(): void {
