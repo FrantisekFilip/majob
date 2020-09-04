@@ -8,7 +8,7 @@ import { ConfigurationService } from "./configuration.service"
 })
 export class AppComponent {
   constructor(conf: ConfigurationService) {
-    conf.configuration.subscribe(r => this.title = r.test)
+    this.title = conf.configuration.test
   }
   title;
 }

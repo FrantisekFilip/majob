@@ -6,9 +6,14 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ConfigurationService {
   configuration: any = {}
-  constructor(http: HttpClient) { 
-    this.configuration = http.get("assets/config.json")
+  constructor(private http: HttpClient) {}
+
+  load() {
+    return new Promise((resolve, reject) => {
+      this.http.get("assets/config.json").subscribe((r) => {
+        this.configuration = r
+        resolve(true)
+      })
+    })
   }
-
-
 }

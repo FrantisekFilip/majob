@@ -3,7 +3,7 @@
 docker build -f Dockerfile --tag majob dist
 ```
 ```
-docker run --name majob -p 8080:80 majob
+docker run -v %cd%/config.json:/usr/share/nginx/html/assets/config.json --name majob -p 8080:80 majob
 ```
 
 
