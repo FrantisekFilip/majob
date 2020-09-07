@@ -1,0 +1,4 @@
+<input [(ngModel)]="search" (input)="getData()">
+<select>
+    <option *ngFor="let candidate of candidates">{{candidate.address}}</option>
+</select>

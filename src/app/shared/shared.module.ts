@@ -7,11 +7,14 @@ import { PhoneNumberComponent } from './phone-number/phone-number.component';
 import {NgxIntlTelInputModule} from "ngx-intl-tel-input";
 import {BsDropdownModule} from "ngx-bootstrap/dropdown";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AddressComponent } from './address/address.component';
+import { HttpClientJsonpModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     InputPersonalIdComponent,
-    PhoneNumberComponent
+    PhoneNumberComponent,
+    AddressComponent
   ],
   imports: [
     CommonModule,
@@ -20,11 +23,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BsDropdownModule.forRoot(),
     NgxIntlTelInputModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientJsonpModule
   ],
   exports: [
     InputPersonalIdComponent,
-    PhoneNumberComponent
+    PhoneNumberComponent,
+    AddressComponent
   ]
 })
 export class SharedModule { }
