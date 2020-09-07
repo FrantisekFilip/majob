@@ -1,19 +1,42 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { MatFormFieldControl } from '@angular/material/form-field';
+import { Component, OnInit, Input, forwardRef } from '@angular/core';
 import { Observable } from 'rxjs';
-import { NgControl } from '@angular/forms';
+import { NgControl, NG_VALUE_ACCESSOR, Validator, AbstractControl, ValidationErrors, NG_VALIDATORS } from '@angular/forms';
 import { rodnecislo } from 'rodnecislo';
-
+import { ControlValueAccessor } from '@angular/forms';
 
 @Component({
   selector: 'app-input-personal-id',
   templateUrl: './input-personal-id.component.html',
   styleUrls: ['./input-personal-id.component.css'],
-  providers: [{provide: MatFormFieldControl, useExisting: InputPersonalIdComponent}]
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => InputPersonalIdComponent),
+      multi: true,
+    },
+    {
+      provide: NG_VALIDATORS,
+      useExisting: forwardRef(() => InputPersonalIdComponent),
+      multi: true,
+    }
+  ],
 })
-export class InputPersonalIdComponent implements OnInit, MatFormFieldControl<string> {
+export class InputPersonalIdComponent implements OnInit, ControlValueAccessor, Validator {
+  onChange = (_: any) => {};
+  onTouched = () => {};
+  onValidationChange: any = () => {};
+  constructor() {}
 
-  constructor() { }
+  writeValue(value: string): void {
+    this.value = value;
+  }
+  registerOnChange(fn: any): void {
+    this.onChange = fn;
+  }
+  registerOnTouched(fn: any): void {}
+  setDisabledState?(isDisabled: boolean): void {
+    throw new Error('Method not implemented.');
+  }
   color: string = 'accent';
   personalNumber: any;
 
@@ -33,28 +56,34 @@ export class InputPersonalIdComponent implements OnInit, MatFormFieldControl<str
   autofilled?: boolean;
   userAriaDescribedBy?: string;
 
-  setDescribedByIds(ids: string[]): void {
-    throw new Error("Method not implemented.");
-  }
-  onContainerClick(event: MouseEvent): void {
-    throw new Error("Method not implemented.");
-  }
   onKeyPress(event) {
-    let charCode = (event.which) ? event.which : event.keyCode
-    if((charCode > 31 && (charCode < 48 || charCode > 57)) || event.target.value.length == 11) {
+    let charCode = event.which ? event.which : event.keyCode;
+    if (
+      (charCode > 31 && (charCode < 48 || charCode > 57)) ||
+      event.target.value.length == 11
+    ) {
       return false;
     }
   }
+
   onKeyUp(event) {
-    if(event.target.value.length == 6) {
+    if (event.target.value.length == 6 && event.which != 8) {
       event.target.value = event.target.value + '/';
     }
     this.personalNumber = rodnecislo(event.target.value);
     this.color = this.personalNumber.isValid() ? '' : 'accent';
     this.value = event.target.value;
+    this.onChange(this.value);
+    this.onValidationChange();
   }
 
-  ngOnInit(): void {
+  validate(control: AbstractControl): ValidationErrors {
+    const isValid = rodnecislo(this.value).isValid();
+    return !isValid ? {error: 'chybné rč'} : null;
+  }
+  registerOnValidatorChange?(fn: () => void): void {
+    this.onValidationChange = fn;
   }
 
+  ngOnInit(): void {}
 }

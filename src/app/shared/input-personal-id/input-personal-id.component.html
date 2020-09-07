@@ -1,5 +1,5 @@
 <mat-form-field floatLabel="always" appearance="outline" [color]="color">
   <mat-label>Rodné číslo</mat-label>
-  <input matInput [required]="required" maxlength="11" (keypress)="onKeyPress($event)" (keyup)="onKeyUp($event)">
+  <input matInput [required]="required" maxlength="11" [value]="value" (keypress)="onKeyPress($event)" (keyup)="onKeyUp($event)">
   <mat-hint align="end">pište bez lomítka</mat-hint>
 </mat-form-field>

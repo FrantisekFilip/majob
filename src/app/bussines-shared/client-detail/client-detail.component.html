@@ -1,4 +1,10 @@
 <div class="container-fluid">
-
+  <h2>Osobní údaje</h2>
+  <form [formGroup]="personalForm">
+    <div class="form-group">
+      <app-input-personal-id formControlName="personalNumber"></app-input-personal-id>
+    </div>
+    <button class="btn btn-primary" type="button" (click)="onSubmit()">Odeslat</button>
+  </form>
+  {{personalForm.valid | json}}
 </div>
-<app-input-personal-id></app-input-personal-id>
