@@ -5,10 +5,10 @@ import {HttpClient, HttpParams} from "@angular/common/http";
   providedIn: 'root'
 })
 export class GeolocationService {
-  host = "http://ags.cuzk.cz/arcgis/rest/services/RUIAN/Vyhledavaci_sluzba_nad_daty_RUIAN/MapServer/exts/GeocodeSOE/tables/1/findAddressCandidates"
+  host = "http://ags.cuzk.cz/arcgis/rest/services/RUIAN/Vyhledavaci_sluzba_nad_daty_RUIAN/MapServer/exts/GeocodeSOE/tables/1/suggest"
   findAddress(address: string) {
     let params = new HttpParams()
-    .append("SingleLine", address)
+    .append("text", address)
     .append("f", "json")
     return this.http.get<any>(`${this.host}?${params.toString()}`)
   }

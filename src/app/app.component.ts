@@ -8,6 +8,7 @@ import { ConfigurationService } from "./configuration.service"
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  address
   constructor(conf: ConfigurationService) {
     this.title = conf.configuration.test
   }

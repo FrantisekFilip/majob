@@ -1,7 +1,10 @@
 <router-outlet></router-outlet>
 {{title}}
 <app-phone-number [phoneNumber]="'7'" (phoneEvent)="phone = $event"></app-phone-number>
-<app-address></app-address>
 {{phone|json}}
+<br>
+<app-address (result)="address = $event"></app-address>
+{{address|json}}
+<br>
 <app-client-detail></app-client-detail>
 
