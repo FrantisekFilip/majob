@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
   webservice: {
-    uri: "https://ws.pvzp.cz"
+    uri: "http://localhost:8080"
   }
 };
