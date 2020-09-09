@@ -1,5 +1,4 @@
 import { Component, OnInit, Input, forwardRef } from '@angular/core';
-import { Observable } from 'rxjs';
 import { NgControl, NG_VALUE_ACCESSOR, Validator, AbstractControl, ValidationErrors, NG_VALIDATORS } from '@angular/forms';
 import { rodnecislo } from 'rodnecislo';
 import { ControlValueAccessor } from '@angular/forms';
@@ -41,7 +40,6 @@ export class InputPersonalIdComponent implements OnInit, ControlValueAccessor, V
   personalNumber: any;
 
   value: string;
-  stateChanges: Observable<void>;
   id: string;
   placeholder: string;
   ngControl: NgControl;
