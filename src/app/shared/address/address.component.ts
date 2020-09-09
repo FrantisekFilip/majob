@@ -8,13 +8,16 @@ import { Observable, Subscription } from 'rxjs';
   styleUrls: ['./address.component.css']
 })
 export class AddressComponent implements OnInit {
+
   private currentSearch : Subscription
   private currentTimeout
   search: string
   candidates: Array<{text: string}> = []
   selected: string = null
   @Output() result = new EventEmitter()
+
   constructor(private geo : GeolocationService) { }
+  
   parseSelected() {
     if(!this.selected) return
     let regex = /([^\d]*) (\d*)(?:\/(\d*)){0,1}, (?:(.*), ){0,1}(\d*) (.*)/
@@ -28,15 +31,18 @@ export class AddressComponent implements OnInit {
       city: match[6]
     })
   }
+
   getData() {
     if(this.currentSearch) this.currentSearch.unsubscribe()
     if(this.currentTimeout) clearTimeout(this.currentTimeout)
     this.candidates = []
     this.currentTimeout = setTimeout(() => {
-      this.currentSearch = this.geo.findAddress(this.search).subscribe(r => this.candidates = r.suggestions)
+      this.currentSearch = this.geo
+        .findAddress(this.search)
+        .subscribe(r => this.candidates = r.suggestions)
     }, 700);
   }
-  ngOnInit(): void {
-  }
+
+  ngOnInit(): void { }
 
 }
