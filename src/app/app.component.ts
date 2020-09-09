@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ConfigurationService } from "./configuration.service"
+import { WsService } from "./infrastructure/ws.service"
 
 
 @Component({
@@ -8,10 +9,21 @@ import { ConfigurationService } from "./configuration.service"
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(conf: ConfigurationService) {
+  public phone;
+
+  public title;
+
+  public address;
+
+  constructor(conf: ConfigurationService, private wsService: WsService) {
     this.title = conf.configuration.test
+
+    wsService.fetchProductInfo()
+    .then(resultOk => {
+      if (resultOk) {
+
+      }
+    })
   }
-  phone;
-  title;
   
 }

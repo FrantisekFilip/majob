@@ -1,0 +1,5 @@
+<input [(ngModel)]="search" (input)="getData()">
+<select [(ngModel)]="selected" (change)="parseSelected()">
+    <option [ngValue]="null">Vyberte adresu</option>
+    <option *ngFor="let candidate of candidates">{{candidate.text}}</option>
+</select>
