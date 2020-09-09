@@ -9,10 +9,11 @@ import { WsService } from "./infrastructure/ws.service"
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
   public phone;
 
   public title;
+
+  public address;
 
   constructor(conf: ConfigurationService, private wsService: WsService) {
     this.title = conf.configuration.test
@@ -20,7 +21,7 @@ export class AppComponent {
     wsService.fetchProductInfo()
     .then(resultOk => {
       if (resultOk) {
-        
+
       }
     })
   }
