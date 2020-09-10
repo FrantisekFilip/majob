@@ -10,7 +10,7 @@
 <mat-form-field appearance="outline">
     <input placeholder="email@domena.cz" type="email" matInput required ngModel appEmailValidator>
 </mat-form-field>
-
+<app-select (result)="log($event)" [values]="[{name:'wooowo', value:1}, {name:'amaziiing', value:2}]"></app-select>
 <app-client-detail></app-client-detail>
 <app-footer></app-footer>
 

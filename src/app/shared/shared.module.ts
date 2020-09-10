@@ -14,6 +14,7 @@ import { HeaderComponent } from './header/header.component';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { EmailValidatorDirective } from './email-validator.directive';
+import { SelectComponent } from './select/select.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { EmailValidatorDirective } from './email-validator.directive';
     AddressComponent,
     FooterComponent,
     HeaderComponent,
-    EmailValidatorDirective
+    EmailValidatorDirective,
+    SelectComponent
   ],
   imports: [
     CommonModule,
@@ -42,7 +44,8 @@ import { EmailValidatorDirective } from './email-validator.directive';
     AddressComponent,
     FooterComponent,
     HeaderComponent,
-    EmailValidatorDirective
+    EmailValidatorDirective,
+    SelectComponent
   ]
 })
 export class SharedModule { }

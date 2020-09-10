@@ -14,7 +14,10 @@ export class AppComponent {
   public title;
 
   public address;
-
+  log(a) {
+    console.log(a)
+  }
+  
   constructor(conf: ConfigurationService, private wsService: WsService) {
     this.title = conf.configuration.test
 
