@@ -9,12 +9,16 @@ import {BsDropdownModule} from "ngx-bootstrap/dropdown";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddressComponent } from './address/address.component';
 import { HttpClientJsonpModule } from '@angular/common/http';
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     InputPersonalIdComponent,
     PhoneNumberComponent,
-    AddressComponent
+    AddressComponent,
+    FooterComponent,
+    HeaderComponent
   ],
   imports: [
     CommonModule,
@@ -29,7 +33,9 @@ import { HttpClientJsonpModule } from '@angular/common/http';
   exports: [
     InputPersonalIdComponent,
     PhoneNumberComponent,
-    AddressComponent
+    AddressComponent,
+    FooterComponent,
+    HeaderComponent
   ]
 })
 export class SharedModule { }

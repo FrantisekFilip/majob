@@ -1,4 +1,5 @@
 <router-outlet></router-outlet>
+<app-header></app-header>
 {{title}}
 <app-phone-number [phoneNumber]="'7'" (phoneEvent)="phone = $event"></app-phone-number>
 {{phone|json}}
@@ -7,4 +8,5 @@
 {{address|json}}
 <br>
 <app-client-detail></app-client-detail>
+<app-footer></app-footer>
 

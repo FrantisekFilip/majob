@@ -1,0 +1,24 @@
+.text-center {
+    text-align: center;
+}
+footer {
+    position: static;
+    bottom: 0;
+    background-color: #454849;
+    padding: 20px;
+    margin-top: 20px;
+    display: block;
+}
+
+.copyright, a {
+    color: #fff;
+}
+
+.cards {
+    height: 37px;
+    margin-top: 15px;
+    background-image: url(/assets/cards.svg);
+    background-repeat: no-repeat;
+    background-size: auto,540px;
+    background-position: 50%;
+}
