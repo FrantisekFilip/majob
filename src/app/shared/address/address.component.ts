@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {GeolocationService} from "../services/geolocation.service"
 import { Observable, Subscription } from 'rxjs';
 
+
 @Component({
   selector: 'app-address',
   templateUrl: './address.component.html',
@@ -11,6 +12,7 @@ export class AddressComponent implements OnInit {
 
   private currentSearch : Subscription
   private currentTimeout
+  isLoading: boolean
   search: string
   candidates: Array<{text: string}> = []
   selected: string = null
@@ -39,8 +41,12 @@ export class AddressComponent implements OnInit {
     this.currentTimeout = setTimeout(() => {
       this.currentSearch = this.geo
         .findAddress(this.search)
-        .subscribe(r => this.candidates = r.suggestions)
+        .subscribe(r => {
+          this.candidates = r.suggestions
+          this.isLoading = false
+        })
     }, 700);
+    this.isLoading = true;
   }
 
   ngOnInit(): void { }

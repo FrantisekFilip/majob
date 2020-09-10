@@ -1,5 +1,14 @@
-<input [(ngModel)]="search" (input)="getData()">
-<select [(ngModel)]="selected" (change)="parseSelected()">
-    <option [ngValue]="null">Vyberte adresu</option>
-    <option *ngFor="let candidate of candidates">{{candidate.text}}</option>
-</select>
+<mat-form-field class="example-full-width" floatLabel="always" appearance="outline">
+    <input style="padding-right: 20px;" type="text"
+    placeholder="Pick one"
+    aria-label="Number"
+    matInput
+    [(ngModel)]="search"
+    (input)="getData()"
+    [matAutocomplete]="auto">
+    <mat-spinner *ngIf="isLoading" style="position: absolute; top: 10px; right: 0" [diameter]="20"></mat-spinner>
+    <mat-autocomplete #auto="matAutocomplete">
+        <mat-option [value]="null">Vyberte adresu</mat-option>
+        <mat-option *ngFor="let candidate of candidates" [value]="candidate.text">{{candidate.text}}</mat-option>
+    </mat-autocomplete>
+</mat-form-field>

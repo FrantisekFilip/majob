@@ -10,6 +10,8 @@ import { CacheModule } from './cache/cache.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ConfigurationService } from "./configuration.service";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatInputModule} from '@angular/material/input'
+import {FormsModule} from "@angular/forms"
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CatalogueModule,
     CacheModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatInputModule,
+    FormsModule
   ],
   providers: [
     ConfigurationService,

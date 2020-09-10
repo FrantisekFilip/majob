@@ -11,6 +11,9 @@ import { AddressComponent } from './address/address.component';
 import { HttpClientJsonpModule } from '@angular/common/http';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { EmailValidatorDirective } from './email-validator.directive';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,8 @@ import { HeaderComponent } from './header/header.component';
     PhoneNumberComponent,
     AddressComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    EmailValidatorDirective
   ],
   imports: [
     CommonModule,
@@ -28,14 +32,17 @@ import { HeaderComponent } from './header/header.component';
     NgxIntlTelInputModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientJsonpModule
+    HttpClientJsonpModule,
+    MatAutocompleteModule,
+    MatProgressSpinnerModule
   ],
   exports: [
     InputPersonalIdComponent,
     PhoneNumberComponent,
     AddressComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    EmailValidatorDirective
   ]
 })
 export class SharedModule { }

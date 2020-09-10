@@ -7,6 +7,10 @@
 <app-address (result)="address = $event"></app-address>
 {{address|json}}
 <br>
+<mat-form-field appearance="outline">
+    <input placeholder="email@domena.cz" type="email" matInput required ngModel appEmailValidator>
+</mat-form-field>
+
 <app-client-detail></app-client-detail>
 <app-footer></app-footer>
 
