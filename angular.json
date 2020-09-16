@@ -5,7 +5,11 @@
   "projects": {
     "majob": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "styleext": "scss"
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -127,5 +131,14 @@
       }
     }
   },
-  "defaultProject": "majob"
+  "defaultProject": "majob",
+  "cli": {
+    "analytics": false
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "style": "scss",
+      "styleext": "scss"
+    }
+  }
 }
