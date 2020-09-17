@@ -1,0 +1,15 @@
+<mat-form-field class="app-zip-code">
+  <mat-label>{{label}}</mat-label>
+  <input matInput
+         type="number"
+         [formControl]="zipCodeFormControl"
+         [errorStateMatcher]="matcher"
+         placeholder="{{placeholder}}">
+  <mat-error
+    *ngIf="zipCodeFormControl.hasError('minLength') || zipCodeFormControl.hasError('maxLength') ">
+    {{zipCodeError}}
+  </mat-error>
+  <mat-error *ngIf="zipCodeFormControl.hasError('required')">
+    {{requiredError}}
+  </mat-error>
+</mat-form-field>
