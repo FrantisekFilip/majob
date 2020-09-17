@@ -1,0 +1,23 @@
+<div class="row d-flex justify-content-center">
+  <h1>{{'baseInformation' | translate}}</h1>
+</div>
+
+<div class="row">
+  <div class="col d-flex justify-content-center">
+    <h3>{{'contactInformation' | translate}}</h3>
+  </div>
+</div>
+
+<form [formGroup]="baseInformationFormGroup" (ngSubmit)="onSubmit()" class="example-form">
+  <div class="row">
+    <div class="col d-flex justify-content-center">
+      <app-email [publicForm]="baseInformationFormGroup"></app-email>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col d-flex justify-content-center">
+       <app-phone-number [publicForm]="baseInformationFormGroup"></app-phone-number>
+    </div>
+  </div>
+</form>

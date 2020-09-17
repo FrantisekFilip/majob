@@ -1,0 +1,11 @@
+<ng-container *ngIf="stepperState$ | async">
+  <div *ngIf="(stepperState$ | async).currentStep !== 'first-step' && (stepperState$ | async).currentStep !== ''" class="row">
+    <div class="col">
+      <button class="btn btn-primary" type="button" (click)="prevStep()">Prev</button>
+    </div>
+
+    <div class="col">
+      <button class="btn btn-primary float-right" type="button" [disabled]="!(isFormValid$ | async)" (click)="nextStep()">Next</button>
+    </div>
+  </div>
+</ng-container>

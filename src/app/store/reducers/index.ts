@@ -33,3 +33,10 @@ export const getIsFormValid = createSelector(
     return state.formValid;
     }
 )
+
+export const getCurrentStep = createSelector(
+  getStepperState,
+  state => {
+    return state.currentStep;
+  }
+)
