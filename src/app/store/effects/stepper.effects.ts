@@ -4,8 +4,8 @@ import {SET_CURRENT_STEP, SET_NEXT_STEP, SET_PREV_STEP, SetCurrentStep} from '..
 import {STEP_TYPE, StepsTypes} from '../../shared/constants/steps-types';
 import {distinctUntilChanged, filter, map, switchMap, take} from 'rxjs/operators';
 import {WizardSteps} from '../../shared/constants/steps-types';
-import {Store} from "@ngrx/store";
-import {StepperState} from "../reducers/stepper.reducer";
+import {Store} from '@ngrx/store';
+import {StepperState} from '../reducers/stepper.reducer';
 import {getNextState, getStepperState} from '../reducers/index';
 @Injectable()
 export class StepperEffects {
