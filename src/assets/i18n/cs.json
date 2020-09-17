@@ -1,0 +1,16 @@
+{
+  "citizensLiabilityInsurance": "Pojištění odpovědnosti občanů",
+  "employeeLiabilityInsurance": "Pojištění odpovědnosti zaměstnance za škodu způsobenou zaměstnavateli",
+  "familyHomeInsurance": "Pojištění rodinného domu",
+  "apartmentInsurance": "Pojištění bytu",
+  "householdInsurance": "Pojištění domácnosti",
+  "recreationalObjectInsurance": "Pojištění rekreačního objektu",
+  "liabilityInsurance": "Pojištění odpovědnosti občanů",
+  "propertyAndLiabilityInsurance": "Pojištění majetku a odpovědnosti občanů",
+  "baseInformation": "Základní kontaktní údaje",
+  "contactInformation": "Kontaktní údaje",
+  "email": "E-mail",
+  "phone": "Telefon",
+  "agreeBackContacted": "Souhlasím s tím, abych byl v záležitostech týkajících se tohoto pojištění kontaktován prostředky elektronické komunikace (např. email, telefon, atd.).",
+  "agreeProcessingPersonalData": "Souhlasím se zpracováním všech poskytnutých údajů pro zasílání obchodních a reklamních sdělení pojistitele na uvedené kontaktní údaje, včetně prostředků elektronické komunikace."
+}

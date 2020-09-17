@@ -1,16 +1,18 @@
-<router-outlet></router-outlet>
 <app-header></app-header>
-{{title}}
-<app-phone-number [phoneNumber]="'7'" (phoneEvent)="phone = $event"></app-phone-number>
-{{phone|json}}
-<br>
-<app-address (result)="address = $event"></app-address>
-{{address|json}}
-<br>
-<mat-form-field appearance="outline">
-    <input placeholder="email@domena.cz" type="email" matInput required ngModel appEmailValidator>
-</mat-form-field>
-<app-select (result)="log($event)" [values]="[{name:'wooowo', value:1}, {name:'amaziiing', value:2}]"></app-select>
-<app-client-detail></app-client-detail>
+
+<div class="container">
+  <app-bread-crumb></app-bread-crumb>
+
+  <router-outlet></router-outlet>
+
+  <br>
+  <br>
+  <br>
+
+  <app-steper (nextStepClick)="nextStepClick()" (prevStepClick)="prevStepClick()"></app-steper>
+</div>
+
+<!--<app-client-detail></app-client-detail>-->
+
 <app-footer></app-footer>
 

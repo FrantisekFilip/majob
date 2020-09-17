@@ -3,18 +3,21 @@ import { CommonModule } from '@angular/common';
 import { InputPersonalIdComponent } from './input-personal-id/input-personal-id.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { PhoneNumberComponent } from './phone-number/phone-number.component';
-import {NgxIntlTelInputModule} from "ngx-intl-tel-input";
-import {BsDropdownModule} from "ngx-bootstrap/dropdown";
+import { PhoneNumberComponent } from './components/phone-number/phone-number.component';
+import {NgxIntlTelInputModule} from 'ngx-intl-tel-input';
+import {BsDropdownModule} from 'ngx-bootstrap/dropdown';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddressComponent } from './address/address.component';
-import { HttpClientJsonpModule } from '@angular/common/http';
+import {HttpClient, HttpClientJsonpModule} from '@angular/common/http';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { EmailValidatorDirective } from './email-validator.directive';
 import { SelectComponent } from './select/select.component';
+import {MatIconModule} from '@angular/material/icon';
+import {RouterModule} from "@angular/router";
+import {BreadCrumbModule} from "./components/bread-crumb/bread-crumb.module";
 
 @NgModule({
   declarations: [
@@ -24,7 +27,7 @@ import { SelectComponent } from './select/select.component';
     FooterComponent,
     HeaderComponent,
     EmailValidatorDirective,
-    SelectComponent
+    SelectComponent,
   ],
   imports: [
     CommonModule,
@@ -36,7 +39,10 @@ import { SelectComponent } from './select/select.component';
     ReactiveFormsModule,
     HttpClientJsonpModule,
     MatAutocompleteModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatIconModule,
+    RouterModule,
+    BreadCrumbModule
   ],
   exports: [
     InputPersonalIdComponent,
@@ -49,3 +55,4 @@ import { SelectComponent } from './select/select.component';
   ]
 })
 export class SharedModule { }
+

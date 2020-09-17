@@ -1,32 +1,29 @@
 import { Component } from '@angular/core';
-import { ConfigurationService } from "./configuration.service"
-import { WsService } from "./infrastructure/ws.service"
-
+import {TranslateService} from '@ngx-translate/core';
+import {Store} from '@ngrx/store';
+import {StepperState} from './store/reducers/stepper.reducer';
+import {SetNextStep, SetPrevStep} from './store/actions/stepper.actions';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  public phone;
 
   public title;
 
-  public address;
-  log(a) {
-    console.log(a)
+  constructor(private translate: TranslateService, private store: Store<StepperState>) {
+    translate.setDefaultLang('cs');
   }
-  
-  constructor(conf: ConfigurationService, private wsService: WsService) {
-    this.title = conf.configuration.test
 
-    wsService.fetchProductInfo()
-    .then(resultOk => {
-      if (resultOk) {
-
-      }
-    })
+  public prevStepClick(): void {
+    this.store.dispatch(new SetPrevStep(true));
+    console.log('prevStepClick');
   }
-  
+
+  public nextStepClick(): void {
+    this.store.dispatch(new SetNextStep(true));
+    console.log('nextStepClick');
+  }
 }
