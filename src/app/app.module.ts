@@ -20,6 +20,9 @@ import {SecondStepModule} from "./components/second-step/second-step.module";
 import {StoreDevtoolsModule} from "@ngrx/store-devtools";
 import {environment} from "../environments/environment.prod";
 import {reducers} from "./store/reducers";
+import {BreadCrumbModule} from "./shared/components/bread-crumb/bread-crumb.module";
+import {SteperModule} from "./shared/components/steper/steper.module";
+import {AppStoreModule} from "./store/app-store.module";
 
 @NgModule({
   declarations: [
@@ -45,10 +48,9 @@ import {reducers} from "./store/reducers";
         deps: [HttpClient]
       }
     }),
-    StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}),
-    StoreModule.forRoot(reducers, {
-      initialState: {},
-    })
+    AppStoreModule,
+    BreadCrumbModule,
+    SteperModule
   ],
   providers: [
     ConfigurationService,

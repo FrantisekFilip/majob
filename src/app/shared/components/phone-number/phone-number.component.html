@@ -1,3 +1,3 @@
-<form #f="ngForm" [formGroup]="phoneForm">
+<form #f="ngForm" [formGroup]="publicForm">
     <ngx-intl-tel-input name="phone" formControlName="phone" (ngModelChange)="onChange($event)" [preferredCountries]="[CountryISO.CzechRepublic]"[enableAutoCountrySelect]="true" [phoneValidation]="true"></ngx-intl-tel-input>
 </form>

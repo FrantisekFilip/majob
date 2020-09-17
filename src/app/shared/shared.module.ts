@@ -17,6 +17,7 @@ import { EmailValidatorDirective } from './email-validator.directive';
 import { SelectComponent } from './select/select.component';
 import {MatIconModule} from '@angular/material/icon';
 import {RouterModule} from "@angular/router";
+import {BreadCrumbModule} from "./components/bread-crumb/bread-crumb.module";
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import {RouterModule} from "@angular/router";
     FooterComponent,
     HeaderComponent,
     EmailValidatorDirective,
-    SelectComponent
+    SelectComponent,
   ],
   imports: [
     CommonModule,
@@ -40,7 +41,8 @@ import {RouterModule} from "@angular/router";
     MatAutocompleteModule,
     MatProgressSpinnerModule,
     MatIconModule,
-    RouterModule
+    RouterModule,
+    BreadCrumbModule
   ],
   exports: [
     InputPersonalIdComponent,

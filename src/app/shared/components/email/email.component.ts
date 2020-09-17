@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ErrorStateMatcher} from '@angular/material/core';
-import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
+import {FormControl, FormGroup, FormGroupDirective, NgForm, Validators} from '@angular/forms';
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -18,6 +18,9 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 export class EmailComponent implements OnInit {
 
   @Input()
+  public publicForm: FormGroup;
+
+  @Input()
   public label = 'Email';
 
   @Input()
@@ -29,6 +32,7 @@ export class EmailComponent implements OnInit {
   @Input()
   public emailError = 'Please enter a valid email address';
 
+
   @Input()
   public requiredError = 'Email is required';
 
@@ -39,9 +43,11 @@ export class EmailComponent implements OnInit {
 
   matcher = new MyErrorStateMatcher();
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
+    this.publicForm.addControl('email', this.emailFormControl);
   }
 
 }

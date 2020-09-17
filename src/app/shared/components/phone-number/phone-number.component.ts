@@ -8,22 +8,25 @@ import {FormGroup, FormControl, Validators} from '@angular/forms';
   styleUrls: ['./phone-number.component.css']
 })
 export class PhoneNumberComponent implements OnInit {
+
+  @Input()
+  public publicForm: FormGroup;
+
   @Input() phoneNumber;
   @Output() phoneEvent = new EventEmitter();
 
   CountryISO = CountryISO;
 
-  phoneForm = new FormGroup({
-    phone: new FormControl(undefined, [Validators.required])
-  });
+  phoneFormControl = new FormControl(undefined, [Validators.required]);
 
   constructor() {
   }
 
   ngOnInit(): void {
+    this.publicForm.addControl('phone', this.phoneFormControl);
   }
 
-  public onChange(event){
+  public onChange(event): void {
     if (event && event.e164Number) {
       this.phoneEvent.emit(event.e164Number);
     }
