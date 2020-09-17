@@ -16,8 +16,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { EmailValidatorDirective } from './email-validator.directive';
 import { SelectComponent } from './select/select.component';
 import {MatIconModule} from '@angular/material/icon';
-import {RouterModule} from "@angular/router";
-import {BreadCrumbModule} from "./components/bread-crumb/bread-crumb.module";
+import {RouterModule} from '@angular/router';
+import {BreadCrumbModule} from './components/bread-crumb/bread-crumb.module';
 
 @NgModule({
   declarations: [

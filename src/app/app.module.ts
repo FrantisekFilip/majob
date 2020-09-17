@@ -11,7 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatInputModule} from '@angular/material/input'
 import {FormsModule} from '@angular/forms'
 import {StoreModule} from '@ngrx/store';
-import {ProductSelectModule} from './components/product-select/product-select.module';
+import {FirstStepModule} from './components/first-step/first-step.module';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {SharedModule} from './shared/shared.module';
@@ -23,6 +23,8 @@ import {reducers} from "./store/reducers";
 import {BreadCrumbModule} from "./shared/components/bread-crumb/bread-crumb.module";
 import {SteperModule} from "./shared/components/steper/steper.module";
 import {AppStoreModule} from "./store/app-store.module";
+import {ThirdStepComponent} from "./components/third-step/third-step.component";
+import {ThirdStepModule} from "./components/third-step/third-step.module";
 
 @NgModule({
   declarations: [
@@ -39,8 +41,9 @@ import {AppStoreModule} from "./store/app-store.module";
     BrowserAnimationsModule,
     MatInputModule,
     FormsModule,
-    ProductSelectModule,
+    FirstStepModule,
     SecondStepModule,
+    ThirdStepModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
