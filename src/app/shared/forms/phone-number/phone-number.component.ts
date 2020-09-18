@@ -1,6 +1,6 @@
-import {Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
-import {CountryISO} from 'ngx-intl-tel-input'
-import {FormGroup, FormControl, Validators} from '@angular/forms';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { CountryISO } from 'ngx-intl-tel-input';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-phone-number',

@@ -4,16 +4,20 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/product-select',
+    redirectTo: '/first-step',
     pathMatch: 'full',
   },
   {
-    path: 'product-select',
-    loadChildren: () => import('./components/product-select/product-select.module').then(m => m.ProductSelectModule)
+    path: 'first-step',
+    loadChildren: () => import('./components/first-step/first-step.module').then(m => m.FirstStepModule)
   },
   {
     path: 'second-step',
     loadChildren: () => import('./components/second-step/second-step.module').then(m => m.SecondStepModule)
+  },
+  {
+    path: 'third-step',
+    loadChildren: () => import('./components/third-step/third-step.module').then(m => m.ThirdStepModule)
   },
 ];
 

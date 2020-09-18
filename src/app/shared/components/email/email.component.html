@@ -2,7 +2,6 @@
   <mat-label>{{label}}</mat-label>
   <input matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
          placeholder="{{placeholder}}">
-  <!--<mat-hint>{{hint}}</mat-hint>-->
   <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
     {{emailError}}
   </mat-error>
