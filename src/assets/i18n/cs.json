@@ -16,7 +16,7 @@
   "phone": "Telefon",
   "agreeBackContacted": "Souhlasím s tím, abych byl v záležitostech týkajících se tohoto pojištění kontaktován prostředky elektronické komunikace (např. email, telefon, atd.).",
   "agreeProcessingPersonalData": "Souhlasím se zpracováním všech poskytnutých údajů pro zasílání obchodních a reklamních sdělení pojistitele na uvedené kontaktní údaje, včetně prostředků elektronické komunikace.",
-  "third-step": {
+  "todo": {
     "title": "Obecné informace",
     "insurance-place": "Místo pojištění",
     "insurance-building": "Pojištění obývané stavby",
