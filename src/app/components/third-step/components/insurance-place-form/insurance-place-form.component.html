@@ -1,0 +1,7 @@
+<h2>{{'third-step.insurance-place' | translate}}</h2>
+<form [formGroup]="insurancePlaceFormGroup"
+      (ngSubmit)="insuranceFormSubmit()" class="third-step__insurance-form">
+  <app-zip-code [publicForm]="insurancePlaceFormGroup"></app-zip-code>
+  <app-municipality [publicForm]="insurancePlaceFormGroup"></app-municipality>
+  <button type="submit" (submit)="insuranceFormSubmit()">Submit</button>
+</form>

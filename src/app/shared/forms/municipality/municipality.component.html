@@ -1,0 +1,11 @@
+<mat-form-field class="municipality">
+  <mat-label>{{label}}</mat-label>
+  <input matInput
+         type="text"
+         [formControl]="municipalityFormControl"
+         [errorStateMatcher]="matcher"
+         placeholder="{{placeholder}}">
+  <mat-error *ngIf="municipalityFormControl.hasError('required')">
+    {{requiredError}}
+  </mat-error>
+</mat-form-field>
