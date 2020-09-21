@@ -18,6 +18,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
 import { BreadCrumbModule } from './components/bread-crumb/bread-crumb.module';
 import { PhoneNumberComponent } from './forms/phone-number/phone-number.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CollapseModule } from 'ngx-bootstrap/collapse';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,7 @@ import { PhoneNumberComponent } from './forms/phone-number/phone-number.componen
     FooterComponent,
     HeaderComponent,
     EmailValidatorDirective,
-    SelectComponent
+    SelectComponent,
   ],
   imports: [
     CommonModule,
@@ -42,7 +44,9 @@ import { PhoneNumberComponent } from './forms/phone-number/phone-number.componen
     MatAutocompleteModule,
     MatProgressSpinnerModule,
     MatIconModule,
-    BreadCrumbModule
+    BreadCrumbModule,
+    BrowserAnimationsModule,
+    CollapseModule
   ],
   exports: [
     InputPersonalIdComponent,
@@ -51,7 +55,7 @@ import { PhoneNumberComponent } from './forms/phone-number/phone-number.componen
     FooterComponent,
     HeaderComponent,
     EmailValidatorDirective,
-    SelectComponent
+    SelectComponent,
   ],
   schemas: [NO_ERRORS_SCHEMA]
 })
