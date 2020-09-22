@@ -45,7 +45,7 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
     MatProgressSpinnerModule,
     MatIconModule,
     BreadCrumbModule,
-    BrowserAnimationsModule,
+   /* BrowserAnimationsModule,*/
     CollapseModule
   ],
   exports: [
