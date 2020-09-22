@@ -18,9 +18,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
 import { BreadCrumbModule } from './components/bread-crumb/bread-crumb.module';
 import { PhoneNumberComponent } from './forms/phone-number/phone-number.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
-import { ComboboxComponent } from './forms/combobox/combobox.component';
 import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
@@ -31,8 +29,7 @@ import { MatSelectModule } from '@angular/material/select';
     FooterComponent,
     HeaderComponent,
     EmailValidatorDirective,
-    SelectComponent,
-    ComboboxComponent,
+    SelectComponent
   ],
   imports: [
     CommonModule,
@@ -59,7 +56,7 @@ import { MatSelectModule } from '@angular/material/select';
     FooterComponent,
     HeaderComponent,
     EmailValidatorDirective,
-    SelectComponent,
+    SelectComponent
   ],
   schemas: [NO_ERRORS_SCHEMA]
 })
