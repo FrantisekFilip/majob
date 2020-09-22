@@ -9,6 +9,10 @@ import { MyErrorStateMatcher } from '../../components/email/email.component';
   styleUrls: ['./municipality.component.scss']
 })
 export class MunicipalityComponent implements OnInit {
+
+  @Input()
+  public value;
+
   @Input()
   public publicForm: FormGroup;
 

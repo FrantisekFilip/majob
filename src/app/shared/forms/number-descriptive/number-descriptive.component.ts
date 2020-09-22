@@ -10,6 +10,9 @@ import { MyErrorStateMatcher } from '../../components/email/email.component';
 export class NumberDescriptiveComponent implements OnInit {
 
   @Input()
+  public value;
+
+  @Input()
   public publicForm: FormGroup;
 
   @Input()

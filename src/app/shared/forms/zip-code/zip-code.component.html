@@ -1,6 +1,7 @@
 <mat-form-field class="app-form-zip-code">
   <mat-label>{{label}}</mat-label>
   <input matInput
+         [(ngModel)]="value"
          type="number"
          [formControl]="zipCodeFormControl"
          [errorStateMatcher]="matcher"
