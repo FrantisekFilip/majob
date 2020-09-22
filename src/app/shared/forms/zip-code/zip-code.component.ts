@@ -10,6 +10,9 @@ import { MyErrorStateMatcher } from '../../components/email/email.component';
 export class ZipCodeComponent implements OnInit {
 
   @Input()
+  public value: string;
+
+  @Input()
   public publicForm: FormGroup;
 
   @Input()

@@ -9,7 +9,7 @@ import {distinctUntilChangedDeep} from '../../utils/distinct-until-changed-deep'
 import {SetSecondStepData} from '../../store/actions/base-information.actions';
 import {getSecondStepState} from '../../store/reducers';
 import {Observable} from 'rxjs';
-import {BaseInformationState} from '../../store/reducers/baseInformation.reducer';
+import {BaseInformationState} from '../../store/reducers/base-information.reducer';
 
 @Component({
   selector: 'app-second-step',

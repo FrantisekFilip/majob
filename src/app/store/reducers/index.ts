@@ -1,12 +1,14 @@
 import {ActionReducerMap, combineReducers, createFeatureSelector, createSelector, State} from '@ngrx/store';
-import {baseInformationReducer, BaseInformationState} from './baseInformation.reducer';
+import {baseInformationReducer, BaseInformationState} from './base-information.reducer';
 import {stepperReducer, StepperState} from './stepper.reducer';
+import {thirdStepInformationReducer} from './third-step-information.reducer';
 
 export const stepperKey = 'rootState';
 
 export const reducers = combineReducers( {
   baseInformation: baseInformationReducer,
-  stepper: stepperReducer
+  stepper: stepperReducer,
+  thirdStepInformation: thirdStepInformationReducer
 });
 
 
@@ -48,3 +50,20 @@ export const getSecondStepState = createSelector(
     return state.baseInformation;
   }
 );
+
+// Step 3
+
+export const getThirdStepState = createSelector(
+  getState,
+  state => {
+    return state.thirdStepInformation;
+  }
+);
+
+export const getInsurancePlaceForm = createSelector(
+  getThirdStepState,
+  state => {
+    return state.insurancePlaceInformation;
+  }
+);
+

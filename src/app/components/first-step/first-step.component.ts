@@ -3,7 +3,7 @@ import {ConstantService} from '../../services/constants/constant.service';
 import {TranslateService} from '@ngx-translate/core';
 import {Router} from "@angular/router";
 import {Store} from "@ngrx/store";
-import {BaseInformationState} from "../../store/reducers/baseInformation.reducer";
+import {BaseInformationState} from "../../store/reducers/base-information.reducer";
 import {SetProduct} from "../../store/actions/base-information.actions";
 import {getStepperState} from "../../store/reducers";
 import {SetNextStep} from "../../store/actions/stepper.actions";
