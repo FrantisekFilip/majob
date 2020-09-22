@@ -1,5 +1,6 @@
 <form #f="ngForm" [formGroup]="publicForm">
   <ngx-intl-tel-input name="phone" formControlName="phone"
+                      [(ngModel)]="value"
                       (ngModelChange)="onChange($event)"
                       [preferredCountries]="[CountryISO.CzechRepublic]"
                       [enableAutoCountrySelect]="true"

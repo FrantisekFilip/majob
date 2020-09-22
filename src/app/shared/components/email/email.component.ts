@@ -18,6 +18,9 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 export class EmailComponent implements OnInit {
 
   @Input()
+  public value: string;
+
+  @Input()
   public publicForm: FormGroup;
 
   @Input()

@@ -48,7 +48,7 @@ export class AppComponent implements OnInit {
             this.stepsHistory.push({
               path: step,
               label: translateLabel,
-              last: true
+              last: false
             });
           }
         });

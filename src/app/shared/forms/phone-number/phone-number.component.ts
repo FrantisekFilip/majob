@@ -9,10 +9,13 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class PhoneNumberComponent implements OnInit {
 
+  @Input() value;
+
   @Input()
   public publicForm: FormGroup;
 
   @Input() phoneNumber;
+
   @Output() phoneEvent = new EventEmitter();
 
   CountryISO = CountryISO;

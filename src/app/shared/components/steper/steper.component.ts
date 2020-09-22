@@ -1,8 +1,8 @@
 import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 import {select, State} from '@ngrx/store';
 import {StepperState} from '../../../store/reducers/stepper.reducer';
-import {Observable} from "rxjs";
-import {getIsFormValid, getStepperState} from "../../../store/reducers";
+import {Observable} from 'rxjs';
+import {getIsFormValid, getStepperState} from '../../../store/reducers';
 
 @Component({
   selector: 'app-steper',
