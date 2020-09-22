@@ -7,36 +7,44 @@ export const stepperKey = 'rootState';
 export const reducers = combineReducers( {
   baseInformation: baseInformationReducer,
   stepper: stepperReducer
-})
+});
 
 
 export const getState = createFeatureSelector<any>(stepperKey);
 
+// Step 1
 export const getStepperState = createSelector(
   getState,
   state => {
     return state.stepper;
   }
-)
-
+);
 
 export const getNextState = createSelector(
   getStepperState,
   state => {
     return state.next;
   }
-)
+);
 
 export const getIsFormValid = createSelector(
   getStepperState,
     state => {
     return state.formValid;
     }
-)
+);
 
 export const getCurrentStep = createSelector(
   getStepperState,
   state => {
     return state.currentStep;
   }
-)
+);
+
+// Step 2
+export const getSecondStepState = createSelector(
+  getState,
+  state => {
+    return state.baseInformation;
+  }
+);
