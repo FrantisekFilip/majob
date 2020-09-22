@@ -1,0 +1,11 @@
+<mat-form-field class="app-number-oriented">
+  <mat-label>{{label}}</mat-label>
+  <input matInput
+         type="number"
+         [formControl]="numberOrientedFormControl"
+         [errorStateMatcher]="matcher"
+         placeholder="{{placeholder}}">
+  <mat-error *ngIf="numberOrientedFormControl.hasError('required')">
+    {{requiredError}}
+  </mat-error>
+</mat-form-field>

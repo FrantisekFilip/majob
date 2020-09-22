@@ -5,7 +5,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 @Component({
   selector: 'app-phone-number',
   templateUrl: './phone-number.component.html',
-  styleUrls: ['./phone-number.component.css']
+  styleUrls: ['./phone-number.component.scss']
 })
 export class PhoneNumberComponent implements OnInit {
 

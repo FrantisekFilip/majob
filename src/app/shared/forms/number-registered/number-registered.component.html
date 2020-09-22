@@ -1,0 +1,11 @@
+<mat-form-field class="app-number-registered">
+  <mat-label>{{label}}</mat-label>
+  <input matInput
+         type="number"
+         [formControl]="numberRegisteredFormControl"
+         [errorStateMatcher]="matcher"
+         placeholder="{{placeholder}}">
+  <mat-error *ngIf="numberRegisteredFormControl.hasError('required')">
+    {{requiredError}}
+  </mat-error>
+</mat-form-field>

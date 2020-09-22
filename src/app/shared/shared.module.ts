@@ -20,6 +20,8 @@ import { BreadCrumbModule } from './components/bread-crumb/bread-crumb.module';
 import { PhoneNumberComponent } from './forms/phone-number/phone-number.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
+import { ComboboxComponent } from './forms/combobox/combobox.component';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,7 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
     HeaderComponent,
     EmailValidatorDirective,
     SelectComponent,
+    ComboboxComponent,
   ],
   imports: [
     CommonModule,
@@ -45,8 +48,9 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
     MatProgressSpinnerModule,
     MatIconModule,
     BreadCrumbModule,
-   /* BrowserAnimationsModule,*/
-    CollapseModule
+    /* BrowserAnimationsModule,*/
+    CollapseModule,
+    MatSelectModule
   ],
   exports: [
     InputPersonalIdComponent,

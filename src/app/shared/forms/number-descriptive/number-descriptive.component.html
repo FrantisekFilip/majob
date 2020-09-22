@@ -1,0 +1,11 @@
+<mat-form-field class="app-number-descriptive">
+  <mat-label>{{label}}</mat-label>
+  <input matInput
+         type="number"
+         [formControl]="numberDescriptiveFormControl"
+         [errorStateMatcher]="matcher"
+         placeholder="{{placeholder}}">
+  <mat-error *ngIf="numberDescriptiveFormControl.hasError('required')">
+    {{requiredError}}
+  </mat-error>
+</mat-form-field>

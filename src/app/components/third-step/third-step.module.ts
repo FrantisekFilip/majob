@@ -9,6 +9,11 @@ import { SharedModule } from '../../shared/shared.module';
 import { ZipCodeModule } from '../../shared/forms/zip-code/zip-code.module';
 import { InsurancePlaceFormComponent } from './components/insurance-place-form/insurance-place-form.component';
 import { MunicipalityModule } from '../../shared/forms/municipality/municipality.module';
+import { StreetModule } from '../../shared/forms/street/street.module';
+import { MunicipalityPartModule } from '../../shared/forms/municipality-part/municipality-part.module';
+import { NumberRegisteredModule } from '../../shared/forms/number-registered/number-registered.module';
+import { NumberDescriptiveModule } from '../../shared/forms/number-descriptive/number-descriptive.module';
+import { NumberOrientedModule } from '../../shared/forms/number-oriented/number-oriented.module';
 
 @NgModule({
   declarations: [
@@ -24,6 +29,11 @@ import { MunicipalityModule } from '../../shared/forms/municipality/municipality
     ReactiveFormsModule,
     ZipCodeModule,
     MunicipalityModule,
+    StreetModule,
+    MunicipalityPartModule,
+    NumberRegisteredModule,
+    NumberDescriptiveModule,
+    NumberOrientedModule,
   ]
 })
 export class ThirdStepModule { }
