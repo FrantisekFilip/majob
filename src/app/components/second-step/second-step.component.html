@@ -9,35 +9,42 @@
     </div>
   </div>
 
-  <form [formGroup]="baseInformationFormGroup" (ngSubmit)="onSubmit()" class="example-form">
-    <div class="row">
-      <div class="col">
-        <app-email [publicForm]="baseInformationFormGroup" [value]="(secondStepState$ | async).customerEmail"></app-email>
+  <ng-container *ngIf="secondStepState$ | async as secondStepState">
+    <form [formGroup]="baseInformationFormGroup" (ngSubmit)="onSubmit()" class="example-form">
+      <div class="row">
+        <div class="col">
+          <app-email [publicForm]="baseInformationFormGroup"
+                     [value]="secondStepState.customerEmail"></app-email>
+        </div>
       </div>
-    </div>
-    <br>
-    <div class="row">
-      <div class="col">
-        <app-phone-number [publicForm]="baseInformationFormGroup" [value]="(secondStepState$ | async).customerPhone"></app-phone-number>
+      <br>
+      <div class="row">
+        <div class="col">
+          <app-phone-number [publicForm]="baseInformationFormGroup"
+                            [value]="secondStepState.customerPhone"></app-phone-number>
+        </div>
       </div>
-    </div>
 
-    <div class="row">
-      <div class="col">
-        <section>
-          <mat-checkbox [color]="'primary'"
-                        formControlName="agreeBackContacted" [ngModel]="(secondStepState$ | async).agreementContact">{{'agreeBackContacted' | translate}}</mat-checkbox>
-        </section>
+      <div class="row">
+        <div class="col">
+          <section>
+            <mat-checkbox [color]="'primary'"
+                          formControlName="agreeBackContacted"
+                          [ngModel]="secondStepState.agreementContact">{{'agreeBackContacted' | translate}}</mat-checkbox>
+          </section>
+        </div>
       </div>
-    </div>
 
-    <div class="row">
-      <div class="col">
-        <section>
-          <mat-checkbox [color]="'primary'"
-                        formControlName="agreeProcessingPersonalData" [ngModel]="(secondStepState$ | async).agreementProcessingPersonalData">{{'agreeProcessingPersonalData' | translate}}</mat-checkbox>
-        </section>
+      <div class="row">
+        <div class="col">
+          <section>
+            <mat-checkbox [color]="'primary'"
+                          formControlName="agreeProcessingPersonalData"
+                          [ngModel]="secondStepState.agreementProcessingPersonalData">{{'agreeProcessingPersonalData' | translate}}</mat-checkbox>
+          </section>
+        </div>
       </div>
-    </div>
-  </form>
+
+    </form>
+  </ng-container>
 </div>

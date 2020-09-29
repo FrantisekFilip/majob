@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {AfterContentChecked, ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit} from '@angular/core';
 import {ErrorStateMatcher} from '@angular/material/core';
 import {FormControl, FormGroup, FormGroupDirective, NgForm, Validators} from '@angular/forms';
 
@@ -13,9 +13,10 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 @Component({
   selector: 'app-email',
   templateUrl: './email.component.html',
-  styleUrls: ['./email.component.scss']
+  styleUrls: ['./email.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class EmailComponent implements OnInit {
+export class EmailComponent implements OnInit, AfterContentChecked  {
 
   @Input()
   public value: string;
@@ -35,7 +36,6 @@ export class EmailComponent implements OnInit {
   @Input()
   public emailError = 'Please enter a valid email address';
 
-
   @Input()
   public requiredError = 'Email is required';
 
@@ -46,11 +46,15 @@ export class EmailComponent implements OnInit {
 
   matcher = new MyErrorStateMatcher();
 
-  constructor() {
+  constructor(private cdr: ChangeDetectorRef) {
   }
 
   ngOnInit(): void {
     this.publicForm.addControl('email', this.emailFormControl);
+  }
+
+  ngAfterContentChecked(): void {
+    this.cdr.detectChanges();
   }
 
 }
