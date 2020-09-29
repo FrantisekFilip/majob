@@ -21,13 +21,9 @@ export class SecondStepComponent implements OnInit, AfterViewInit {
   public secondStepState$: Observable<BaseInformationState>;
 
   baseInformationFormGroup = new FormGroup({
-    agreeBackContacted: new FormControl(undefined, [Validators.required]),
-    agreeProcessingPersonalData: new FormControl(undefined, [Validators.required])
+    agreeBackContacted: new FormControl(false, [Validators.requiredTrue]),
+    agreeProcessingPersonalData: new FormControl(false, [Validators.requiredTrue])
   });
-
-/*
-  @ViewChild('baseInfoForm') baseInfoForm: FormGroupDirective;
-*/
 
   constructor(public translateService: TranslateService, public store: Store<StepperState>) {
   }
@@ -39,11 +35,12 @@ export class SecondStepComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     this.baseInformationFormGroup.valueChanges.pipe(debounceTime(1000), distinctUntilChangedDeep()).subscribe(data => {
       console.log(data);
+
       this.store.dispatch(new SetFormValid(this.baseInformationFormGroup.valid));
 
       if (this.baseInformationFormGroup.valid) {
         this.store.dispatch(new SetSecondStepData({
-          customerPhone: data.phone.e164Number,
+          customerPhone: data.phone,
           customerEmail: data.email,
           agreementContact: data.agreeBackContacted,
           agreementProcessingPersonalData: data.agreeProcessingPersonalData}));
