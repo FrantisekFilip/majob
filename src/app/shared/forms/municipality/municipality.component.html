@@ -1,7 +1,8 @@
-<mat-form-field class="municipality">
+<mat-form-field class="app-municipality">
   <mat-label>{{label}}</mat-label>
   <input matInput
          type="text"
+         [(ngModel)]="value"
          [formControl]="municipalityFormControl"
          [errorStateMatcher]="matcher"
          placeholder="{{placeholder}}">

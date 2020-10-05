@@ -1,0 +1,60 @@
+<form [formGroup]="residentialInsuranceFormGroup"
+      (ngSubmit)="formSubmit()" class="residential-insurance-form">
+  <div class="form-row">
+    <div class="form-group col-md-4 text-center">
+      <app-combobox [publicForm]="residentialInsuranceFormGroup"
+                    label="Typ objektu"
+                    [formName]="'objectType'"
+                    [options]="objectTypes"></app-combobox>
+    </div>
+    <div class="form-group col-md-4 text-center">
+      <app-combobox [publicForm]="residentialInsuranceFormGroup"
+                    label="Varianta pojištění"
+                    [formName]="'insuranceType'"
+                    [options]="insuranceTypes"></app-combobox>
+    </div>
+    <div>
+      <div class="form-group col-md-4 text-center">
+        <app-combobox [publicForm]="residentialInsuranceFormGroup"
+                      label="Umístění"
+                      [formName]="'objectPlace'"
+                      [options]="objectPlaces"></app-combobox>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-check col-md-4 text-center">
+      <label>Nová stavba</label>
+      <mat-radio-group [formControl]="newBuildingFormControl"
+                       name="newBuildingFormControl"
+                       color="primary"
+                       class="residential-insurance-form__radio-group">
+        <mat-radio-button [value]="true" class="residential-insurance-form__radio-btn">ANO</mat-radio-button>
+        <mat-radio-button [value]="false" class="residential-insurance-form__radio-btn">NE</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="form-check col-md-4 text-center">
+      <label>Nový domov</label>
+      <mat-radio-group [formControl]="newHouseFormControl"
+                       name="newHouseFormControl"
+                       color="primary"
+                       class="residential-insurance-form__radio-group">
+        <mat-radio-button [value]="true" class="residential-insurance-form__radio-btn">ANO</mat-radio-button>
+        <mat-radio-button [value]="false" class="residential-insurance-form__radio-btn">NE</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="form-check col-md-4 text-center">
+      <label>Vyloučena povodeň nebo záplava</label>
+      <mat-radio-group [formControl]="floodExclFormControl"
+                       name="floodExcl"
+                       color="primary"
+                       class="residential-insurance-form__radio-group">
+        <mat-radio-button [value]="true" class="residential-insurance-form__radio-btn">ANO</mat-radio-button>
+        <mat-radio-button [value]="false" class="residential-insurance-form__radio-btn">NE</mat-radio-button>
+      </mat-radio-group>
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-outline-primary" (submit)="formSubmit()">Submit</button>
+</form>

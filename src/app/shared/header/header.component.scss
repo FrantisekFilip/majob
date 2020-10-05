@@ -1,122 +1,125 @@
-.d-flex {
+.header {
+  .d-flex {
     display: flex
-}
+  }
 
-.nav-bar {
+  .nav-bar {
     display: block;
     width: 100%;
-}
 
-nav {
+    .navbar-collapse {
+      margin-bottom: 1rem;
+    }
+  }
+
+  nav {
     padding: 0;
-}
+  }
 
-.menu-wrapper {
+  .menu-wrapper {
     flex-basis: 100%;
     display: flex;
     flex-grow: 1;
     overflow: hidden;
     border-bottom: 1px solid #d5d7d6;
-}
+  }
 
-.navbar-nav {
+  .navbar-nav {
     overflow: hidden;
-}
+  }
 
-.nav-brand {
+  .nav-brand {
     padding: 10px;
-}
+  }
 
 
-
-.right-content {
+  .right-content {
     height: 100px;
     padding: 15px;
-}
+  }
 
-.brand-content {
+  .brand-content {
     width: 243px;
     height: 174px;
     background-image: url(/assets/logo.svg);
     background-color: #fff;
     background-repeat: no-repeat;
-}
+  }
 
-.brand-content.small {
+  .brand-content.small {
     width: 114px;
     height: 81px;
-}
+  }
 
-.navbar-toggler {
+  .navbar-toggler {
     margin: 15px;
-}
+  }
 
-.nav-item {
+  .nav-item {
     margin: 5px 0 5px 20px;
     line-height: 20px;
     text-decoration: none;
     font-size: 16px;
-}
+  }
 
-.nav-item a:hover {
+  .nav-item a:hover {
     color: #ef4f34;
-}
+  }
 
-a {
+  a {
     color: #515558;
     text-decoration: none;
     background-color: transparent;
-}
+  }
 
-@media (min-width: 992px) {
+  @media (min-width: 992px) {
     .menu-wrapper, .right-wrapper {
-        height: auto!important
+      height: auto !important
     }
     .nav-brand {
-        padding: 30px 10px;
+      padding: 30px 10px;
     }
     .right-wrapper {
-        flex-basis: 100%;
-        display: flex;
-        flex-grow: 1;
-        overflow: hidden;
-        height: auto;
-        border-bottom: 1px solid #d5d7d6;
+      flex-basis: 100%;
+      display: flex;
+      flex-grow: 1;
+      overflow: hidden;
+      height: auto;
+      border-bottom: 1px solid #d5d7d6;
     }
     .menu-content {
-        height: 100px;
-        padding: 15px;
+      height: 100px;
+      padding: 15px;
     }
 
-}
+  }
 
-@media (max-width: 991.98px) {
+  @media (max-width: 991.98px) {
     .navbar-nav {
-        display: block;
-        width: 100%;
-        background-color: #515558
+      display: block;
+      width: 100%;
+      background-color: #515558
     }
 
     .navbar-nav .nav-item {
-        padding: 10px 15px;
+      padding: 10px 15px;
     }
 
-    .navbar-nav a:not(:hover){
-        color: #fff;
+    .navbar-nav a:not(:hover) {
+      color: #fff;
     }
 
     .navbar-nav a {
-        display: block;
+      display: block;
     }
 
     .button-wrapper, .right-wrapper {
-        width: 100px;
+      width: 100px;
     }
 
     .right-wrapper {
-        font-size: 12px;
-        line-height: 1.1;
+      font-size: 12px;
+      line-height: 1.1;
     }
-
-
+  }
 }

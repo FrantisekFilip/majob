@@ -7,20 +7,22 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { EmailModule } from '../../shared/components/email/email.module';
 import { SharedModule } from '../../shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
     SecondStepComponent
   ],
-  imports: [
-    CommonModule,
-    SecondStepRoutingModule,
-    TranslateModule,
-    MatFormFieldModule,
-    EmailModule,
-    SharedModule,
-    ReactiveFormsModule,
-    FormsModule
-  ]
+    imports: [
+        CommonModule,
+        SecondStepRoutingModule,
+        TranslateModule,
+        MatFormFieldModule,
+        EmailModule,
+        SharedModule,
+        ReactiveFormsModule,
+        FormsModule,
+        MatCheckboxModule
+    ]
 })
 export class SecondStepModule { }

@@ -14,15 +14,15 @@ import {STEP_TYPE, WizardSteps} from './shared/constants/steps-types';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
 
   public title;
-  public stepsHistory: {path: STEP_TYPE, label: string, last: boolean}[] = [];
+  public stepsHistory: { path: STEP_TYPE, label: string, last: boolean }[] = [];
 
   constructor(private translate: TranslateService,
               private store: Store<StepperState>,
               public router: Router
-              ) {
+  ) {
     translate.setDefaultLang('cs');
   }
 
@@ -43,12 +43,16 @@ export class AppComponent implements OnInit{
       this.stepsHistory = [];
       currentHistory.forEach(step => {
         this.translate.get(step).subscribe(translateLabel => {
-          this.stepsHistory.push({
-            path: step,
-            label: translateLabel,
-            last:  WizardSteps.indexOf(step) + 1 === currentHistory.length});
+          const exist = this.stepsHistory.findIndex(stepH => stepH.label === translateLabel) >= 0;
+          if (!exist) {
+            this.stepsHistory.push({
+              path: step,
+              label: translateLabel,
+              last: false
+            });
+          }
         });
-        });
+      });
     });
   }
 

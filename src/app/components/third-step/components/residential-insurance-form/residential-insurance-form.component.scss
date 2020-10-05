@@ -1,0 +1,12 @@
+.residential-insurance-form {
+
+  &__radio-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__radio-btn {
+    margin: 5px;
+  }
+}

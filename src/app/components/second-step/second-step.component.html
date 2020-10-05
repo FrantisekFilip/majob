@@ -1,23 +1,50 @@
-<div class="row d-flex justify-content-center">
-  <h1>{{'baseInformation' | translate}}</h1>
-</div>
-
-<div class="row">
-  <div class="col d-flex justify-content-center">
-    <h3>{{'contactInformation' | translate}}</h3>
+<div class="second-step">
+  <div class="row d-flex justify-content-center">
+    <h1>{{'baseInformation' | translate}}</h1>
   </div>
-</div>
 
-<form [formGroup]="baseInformationFormGroup" (ngSubmit)="onSubmit()" class="example-form">
   <div class="row">
     <div class="col d-flex justify-content-center">
-      <app-email [publicForm]="baseInformationFormGroup"></app-email>
+      <h3>{{'contactInformation' | translate}}</h3>
     </div>
   </div>
-  <br>
-  <div class="row">
-    <div class="col d-flex justify-content-center">
-       <app-phone-number [publicForm]="baseInformationFormGroup"></app-phone-number>
-    </div>
-  </div>
-</form>
+
+  <ng-container *ngIf="secondStepState$ | async as secondStepState">
+    <form [formGroup]="baseInformationFormGroup" (ngSubmit)="onSubmit()" class="example-form">
+      <div class="row">
+        <div class="col">
+          <app-email [publicForm]="baseInformationFormGroup"
+                     [value]="secondStepState.customerEmail"></app-email>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col">
+          <app-phone-number [publicForm]="baseInformationFormGroup"
+                            [value]="secondStepState.customerPhone"></app-phone-number>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <section>
+            <mat-checkbox [color]="'primary'"
+                          formControlName="agreeBackContacted"
+                          [ngModel]="secondStepState.agreementContact">{{'agreeBackContacted' | translate}}</mat-checkbox>
+          </section>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <section>
+            <mat-checkbox [color]="'primary'"
+                          formControlName="agreeProcessingPersonalData"
+                          [ngModel]="secondStepState.agreementProcessingPersonalData">{{'agreeProcessingPersonalData' | translate}}</mat-checkbox>
+          </section>
+        </div>
+      </div>
+
+    </form>
+  </ng-container>
+</div>
